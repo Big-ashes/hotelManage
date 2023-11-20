@@ -1,0 +1,109 @@
+
+<title>统计中心</title>
+
+<div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    <a lay-href="">主页</a>
+    <a><cite>统计中心</cite></a>
+    <a><cite>入住统计</cite></a>
+  </div>
+</div>
+<div class="layui-fluid">
+  <div class="layui-row layui-col-space15">
+      <script type="text/html" template lay-url="/getChecinNum/">
+
+
+    <div class="layui-col-sm6 layui-col-md3">
+      <div class="layui-card">
+        <div class="layui-card-header">
+          今日入住
+          <span class="layui-badge layui-bg-blue layuiadmin-badge">今日</span>
+        </div>
+        <div class="layui-card-body layuiadmin-card-list">
+          <p class="layuiadmin-big-font">{{d.data.dayNum}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-sm6 layui-col-md3">
+      <div class="layui-card">
+        <div class="layui-card-header">
+          昨日入住
+          <span class="layui-badge layui-bg-cyan layuiadmin-badge">昨日</span>
+        </div>
+        <div class="layui-card-body layuiadmin-card-list">
+          <p class="layuiadmin-big-font">{{d.data.yesdayNum}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-sm6 layui-col-md3">
+      <div class="layui-card">
+        <div class="layui-card-header">
+          本月入住
+          <span class="layui-badge layui-bg-green layuiadmin-badge">月</span>
+        </div>
+        <div class="layui-card-body layuiadmin-card-list">
+
+          <p class="layuiadmin-big-font">{{d.data.monthNum}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-sm6 layui-col-md3">
+      <div class="layui-card">
+        <div class="layui-card-header">
+          本年入住
+          <span class="layui-badge layui-bg-orange layuiadmin-badge">年</span>
+        </div>
+        <div class="layui-card-body layuiadmin-card-list">
+          <p class="layuiadmin-big-font">{{d.data.yearNum}}</p>
+        </div>
+      </div>
+    </div>
+</script>
+      <div class="layui-row">
+    <div class="layui-col-sm6">
+      <div class="layui-card">
+        <div class="layui-card-header">
+          本月入住统计
+          <div class="layui-btn-group layuiadmin-btn-group">
+            <button class="layui-btn layui-btn-primary layui-btn-xs">本月</button>
+          </div>
+        </div>
+        <div class="layui-card-body">
+                <div class="layui-carousel layadmin-carousel layadmin-dataview" data-anim="fade" lay-filter="LAY-checkinchart-pageone">
+                  <div carousel-item id="LAY-checkinchart-pageone">
+                    <div><i class="layui-icon layui-icon-loading1 layadmin-loading"></i></div>
+                  </div>
+                </div>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-sm6">
+      <div class="layui-card">
+        <div class="layui-card-header">
+          今年入住统计
+          <div class="layui-btn-group layuiadmin-btn-group">
+            <button class="layui-btn layui-btn-primary layui-btn-xs">今年</button>
+          </div>
+        </div>
+        <div class="layui-card-body">
+          <div class="layui-row">
+            <div class="layui-col-sm12">
+                <div class="layui-carousel layadmin-carousel layadmin-dataview" data-anim="fade" lay-filter="LAY-checkinchart-pagetwo">
+                  <div carousel-item id="LAY-checkinchart-pagetwo">
+                    <div><i class="layui-icon layui-icon-loading1 layadmin-loading"></i></div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+  </div>
+</div>
+
+<script>
+layui.use('checkinchart', layui.factory('checkinchart'));
+</script>+
+
+
